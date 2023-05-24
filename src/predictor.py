@@ -229,7 +229,12 @@ def evaluation_metrics(file_path: str, y_pred: List[int], y_true: List[int], y_p
         'f1_score': metrics.f1_score(y_true, y_pred),
         'roc_auc': metrics.roc_auc_score(y_true, y_pred),
         'log_loss': metrics.log_loss(y_true, y_pred),
-        'confusion_matrix': metrics.confusion_matrix(y_true, y_pred).tolist()
+        'confusion_matrix': metrics.confusion_matrix(y_true, y_pred).tolist(),
+        'balanced_accuracy': metrics.balanced_accuracy_score(y_true, y_pred),
+        'f1_weighted': metrics.f1_score(y_true, y_pred, average='weighted'),
+        'f1_macro': metrics.f1_score(y_true, y_pred, average='macro'),
+        'f1_micro': metrics.f1_score(y_true, y_pred, average='micro'),
+        'precision_weighted': metrics.precision_score(y_true, y_pred, average='weighted'),
     }
 
     # Compute ROC curve
