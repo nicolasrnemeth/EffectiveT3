@@ -1,0 +1,138 @@
+{
+    "QCX12068.1": {
+        "definition": "hypothetical protein APS58_3297 [Acidovorax citrulli]",
+        "organism": "Acidovorax citrulli"
+    },
+    "221361419": {
+        "definition": "Type III secretion system, translocated effector protein, LEE associated [Escherichia coli]",
+        "organism": "Escherichia coli"
+    },
+    "62199612": {
+        "definition": "EseB [Edwardsiella tarda]",
+        "organism": "Edwardsiella tarda"
+    },
+    "164457616": {
+        "definition": "non-LEE-encoded effector EspJ [Escherichia coli O26:H11 str. 11368]",
+        "organism": "Escherichia coli O26:H11 str. 11368"
+    },
+    "B0B9M3": {
+        "definition": "RecName: Full=Inclusion membrane protein D",
+        "organism": "Chlamydia trachomatis 434/Bu"
+    },
+    "121308165": {
+        "definition": "NleA6-2 protein [Escherichia coli]",
+        "organism": "Escherichia coli"
+    },
+    "O84462": {
+        "definition": "RecName: Full=Translocated actin-recruiting phosphoprotein; Short=Tarp protein",
+        "organism": "Chlamydia trachomatis D/UW-3/CX"
+    },
+    "605661": {
+        "definition": "ExoT [Sinorhizobium meliloti]",
+        "organism": "Sinorhizobium meliloti"
+    },
+    "Q2QCI9": {
+        "definition": "RecName: Full=Effector protein HopAB3; AltName: Full=Avirulence protein AvrPtoB; Includes: RecName: Full=E3 ubiquitin-protein ligase; AltName: Full=E3 ubiquitin-protein transferase",
+        "organism": "Pseudomonas syringae pv. tomato"
+    },
+    "282951860": {
+        "definition": "T3SS effector protein NleF [Citrobacter rodentium ICC168]",
+        "organism": "Citrobacter rodentium ICC168"
+    },
+    "Q08242": {
+        "definition": "Avirulence protein",
+        "organism": "Pseudomonas syringae"
+    },
+    "O84290": {
+        "definition": "RecName: Full=Uncharacterized protein CT_288",
+        "organism": "Chlamydia trachomatis D/UW-3/CX"
+    },
+    "Q9RBS0": {
+        "definition": "RecName: Full=Protein PopA1; Contains: RecName: Full=Protein PopA2; Contains: RecName: Full=Protein PopA3",
+        "organism": "Ralstonia nicotianae GMI1000"
+    },
+    "Q8XRV0": {
+        "definition": "Probable trehalose-6-phosphate synthase (Alpha,alpha-trehalose-phosphate synthase udp-forming) protein",
+        "organism": "Ralstonia solanacearum"
+    },
+    "O84616": {
+        "definition": "RecName: Full=Probable oxidoreductase CT_610; AltName: Full=Chlamydia protein associating with death domains; Short=CADD",
+        "organism": "Chlamydia trachomatis D/UW-3/CX"
+    },
+    "O84743": {
+        "definition": "Metal dependent hydrolase",
+        "organism": "Chlamydia trachomatis"
+    },
+    "Q9F0H3": {
+        "definition": "RecName: Full=Type III secretion protein HrcQb",
+        "organism": "Pseudomonas syringae pv. tomato str. DC3000"
+    },
+    "A2S1Q1": {
+        "definition": "RecName: Full=Effector protein BipC",
+        "organism": "Burkholderia mallei NCTC 10229"
+    },
+    "Q87W48": {
+        "definition": "Type III effector HopAA1-2 (Hrp-dependent outer protein A2)",
+        "organism": "Pseudomonas syringae pv. tomato"
+    },
+    "E1WAC6": {
+        "definition": "RecName: Full=Cell invasion protein SipA; AltName: Full=Effector protein SipA",
+        "organism": "Salmonella enterica subsp. enterica serovar Typhimurium str. SL1344"
+    },
+    "282950077": {
+        "definition": "T3SS effector protein EspB [Citrobacter rodentium ICC168]",
+        "organism": "Citrobacter rodentium ICC168"
+    },
+    "Q56019": {
+        "definition": "RecName: Full=Cell invasion protein SipB; AltName: Full=Effector protein SipB",
+        "organism": "Salmonella enterica subsp. enterica serovar Typhimurium str. LT2"
+    },
+    "254591364": {
+        "definition": "non-LEE-encoded type III secreted effector [Escherichia coli O157:H7 str. TW14359]",
+        "organism": "Escherichia coli O157:H7 str. TW14359"
+    },
+    "Q326N4": {
+        "definition": "RecName: Full=Cysteine protease-like VirA; AltName: Full=Effector protein VirA",
+        "organism": "Shigella dysenteriae Sd197"
+    },
+    "O84107": {
+        "definition": "Hypothetical protein",
+        "organism": "Chlamydia trachomatis"
+    },
+    "O84718": {
+        "definition": "Hypothetical protein",
+        "organism": "Chlamydia trachomatis"
+    },
+    "139003779": {
+        "definition": "tir-cytoskeleton coupling protein [Escherichia coli O51:H-]",
+        "organism": "Escherichia coli O51:H-"
+    },
+    "55981974": {
+        "definition": "EseC [Edwardsiella tarda]",
+        "organism": "Edwardsiella tarda"
+    },
+    "D2TK72": {
+        "definition": "The Citrobacter rodentium genome sequence reveals convergent evolution with human pathogenic Escherichia coli.",
+        "organism": "Citrobacter rodentium (strain ICC168)"
+    },
+    "A1JQ83": {
+        "definition": "The complete genome sequence and comparative genome analysis of the high pathogenicity Yersinia enterocolitica strain 8081.",
+        "organism": "Yersinia enterocolitica serotype O:8 / biotype 1B (strain NCTC 13174 / 8081)"
+    },
+    "C4PL72": {
+        "definition": "Genetic organization and functional analysis of the type III secretion system of Bradyrhizobium elkanii.",
+        "organism": "Bradyrhizobium elkanii"
+    },
+    "D8P480": {
+        "definition": "Genomes of three tomato pathogens within the Ralstonia solanacearum species complex reveal significant evolutionary divergence.",
+        "organism": "Ralstonia solanacearum CFBP2957"
+    },
+    "F3IP82": {
+        "definition": "Dynamic evolution of pathogenicity revealed by sequencing and comparative genomics of 19 Pseudomonas syringae isolates.",
+        "organism": "Pseudomonas amygdali pv. lachrymans str. M302278"
+    },
+    "H6UWS2": {
+        "definition": "Identification of non-TAL effectors in Xanthomonas oryzae pv. oryzae Chinese strain 13751 and analysis of their role in the bacterial virulence.",
+        "organism": "Xanthomonas oryzae pv. oryzae"
+    }
+}

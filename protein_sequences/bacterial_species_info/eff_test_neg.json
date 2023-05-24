@@ -1,0 +1,138 @@
+{
+    "WP_016842769.1": {
+        "definition": "putative quinol monooxygenase [Bradyrhizobium elkanii]",
+        "organism": "Bradyrhizobium elkanii"
+    },
+    "WP_042871908.1": {
+        "definition": "carbamate kinase [Aeromonas piscicola]",
+        "organism": "Aeromonas piscicola"
+    },
+    "WP_235663804.1": {
+        "definition": "MobA/MobL family protein, partial [Pseudomonas coronafaciens]",
+        "organism": "Pseudomonas coronafaciens"
+    },
+    "WP_231798750.1": {
+        "definition": "Imm49 family immunity protein, partial [Vibrio cholerae]",
+        "organism": "Vibrio cholerae"
+    },
+    "WP_104555025.1": {
+        "definition": "methyl-accepting chemotaxis protein [Xanthomonas arboricola]",
+        "organism": "Xanthomonas arboricola"
+    },
+    "WP_248881075.1": {
+        "definition": "class I SAM-dependent methyltransferase [Bradyrhizobium japonicum]",
+        "organism": "Bradyrhizobium japonicum"
+    },
+    "WP_210544070.1": {
+        "definition": "3-isopropylmalate dehydratase small subunit [Chromobacterium violaceum]",
+        "organism": "Chromobacterium violaceum"
+    },
+    "WP_122271653.1": {
+        "definition": "4-hydroxyphenylpyruvate dioxygenase [Pseudomonas savastanoi]",
+        "organism": "Pseudomonas savastanoi"
+    },
+    "WP_228987720.1": {
+        "definition": "DUF6012 family protein [Xanthomonas citri]",
+        "organism": "Xanthomonas citri"
+    },
+    "WP_149046068.1": {
+        "definition": "low molecular weight protein arginine phosphatase [Listeria monocytogenes]",
+        "organism": "Listeria monocytogenes"
+    },
+    "WP_131825865.1": {
+        "definition": "TonB-dependent receptor, partial [Chromobacterium violaceum]",
+        "organism": "Chromobacterium violaceum"
+    },
+    "WP_182333309.1": {
+        "definition": "glycosyl hydrolase family 18 protein [Chromobacterium violaceum]",
+        "organism": "Chromobacterium violaceum"
+    },
+    "WP_049584416.1": {
+        "definition": "TIGR03750 family conjugal transfer protein [Photorhabdus luminescens]",
+        "organism": "Photorhabdus luminescens"
+    },
+    "WP_155518753.1": {
+        "definition": "cellulase family glycosylhydrolase, partial [Xanthomonas euvesicatoria]",
+        "organism": "Xanthomonas euvesicatoria"
+    },
+    "WP_115377607.1": {
+        "definition": "phage tail protein [Edwardsiella tarda]",
+        "organism": "Edwardsiella tarda"
+    },
+    "WP_072215832.1": {
+        "definition": "DNA polymerase III subunit beta, partial [Listeria monocytogenes]",
+        "organism": "Listeria monocytogenes"
+    },
+    "WP_212080687.1": {
+        "definition": "dihydrofolate reductase [Bradyrhizobium diazoefficiens]",
+        "organism": "Bradyrhizobium diazoefficiens"
+    },
+    "WP_230847952.1": {
+        "definition": "LysR substrate-binding domain-containing protein, partial [Pseudomonas amygdali]",
+        "organism": "Pseudomonas amygdali"
+    },
+    "WP_231006824.1": {
+        "definition": "DUF693 family protein, partial [Borreliella burgdorferi]",
+        "organism": "Borreliella burgdorferi"
+    },
+    "WP_033465611.1": {
+        "definition": "tRNA lysidine(34) synthetase TilS, partial [Bordetella bronchiseptica]",
+        "organism": "Bordetella bronchiseptica"
+    },
+    "WP_005996509.1": {
+        "definition": "carbon-nitrogen hydrolase family protein [Xanthomonas vesicatoria]",
+        "organism": "Xanthomonas vesicatoria"
+    },
+    "WP_181689931.1": {
+        "definition": "transposase, partial [Xanthomonas oryzae]",
+        "organism": "Xanthomonas oryzae"
+    },
+    "WP_016903243.1": {
+        "definition": "efflux RND transporter permease subunit [Xanthomonas arboricola]",
+        "organism": "Xanthomonas arboricola"
+    },
+    "WP_200497634.1": {
+        "definition": "LLM class flavin-dependent oxidoreductase [Bradyrhizobium diazoefficiens]",
+        "organism": "Bradyrhizobium diazoefficiens"
+    },
+    "WP_071988834.1": {
+        "definition": "DUF1010 domain-containing protein, partial [Pantoea stewartii]",
+        "organism": "Pantoea stewartii"
+    },
+    "WP_181934992.1": {
+        "definition": "relaxase/mobilization nuclease domain-containing protein, partial [Listeria monocytogenes]",
+        "organism": "Listeria monocytogenes"
+    },
+    "WP_029996342.1": {
+        "definition": "DUF6065 family protein [Xanthomonas citri]",
+        "organism": "Xanthomonas citri"
+    },
+    "WP_245455359.1": {
+        "definition": "DUF4304 domain-containing protein [Sinorhizobium fredii]",
+        "organism": "Sinorhizobium fredii"
+    },
+    "WP_069605603.1": {
+        "definition": "glutathione ABC transporter permease GsiD [Burkholderia mallei]",
+        "organism": "Burkholderia mallei"
+    },
+    "WP_201271666.1": {
+        "definition": "AbrB family transcriptional regulator, partial [Sinorhizobium meliloti]",
+        "organism": "Sinorhizobium meliloti"
+    },
+    "WP_248842350.1": {
+        "definition": "succinate dehydrogenase, cytochrome b556 subunit [Xanthomonas euvesicatoria]",
+        "organism": "Xanthomonas euvesicatoria"
+    },
+    "WP_087452715.1": {
+        "definition": "2-dehydropantoate 2-reductase [Ralstonia solanacearum]",
+        "organism": "Ralstonia solanacearum"
+    },
+    "WP_044127577.1": {
+        "definition": "DJ-1/PfpI family protein [Vibrio cholerae]",
+        "organism": "Vibrio cholerae"
+    },
+    "WP_028133273.1": {
+        "definition": "ADP-forming succinate--CoA ligase subunit beta [Bradyrhizobium japonicum]",
+        "organism": "Bradyrhizobium japonicum"
+    }
+}
