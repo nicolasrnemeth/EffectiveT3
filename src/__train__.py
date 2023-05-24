@@ -3,7 +3,6 @@ import sys
 import json
 import time
 import pickle
-import warnings
 from typing import Any
 from .trainer import Trainer
 from argparse import ArgumentParser, RawTextHelpFormatter
@@ -15,7 +14,6 @@ from argparse import ArgumentParser, RawTextHelpFormatter
 """
 
 # Constants
-
 # Folder where to save models and parameters
 SAVED_MODELS_FOLDER = "src/training/models_and_parameters"
 
@@ -63,7 +61,7 @@ def start(pargs: dict) -> None:
     trainer = Trainer(pargs.pos, pargs.neg, seq_range=SEQ_RANGE)
     print("Training Model ...\n")
     model, parameters = trainer.train()
-    save_model(SAVED_MODELS_FOLDER+"/model.bin", SAVED_MODELS_FOLDER+"/parameters.json",
+    save_model(SAVED_MODELS_FOLDER+"/model.bin", SAVED_MODELS_FOLDER+"/optimized_parameters.json",
                model, parameters)
     print("Done! Model and parameters saved!")
 
