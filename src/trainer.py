@@ -213,8 +213,15 @@ class Trainer(object):
         """
         grid = dict()
         for key in params:
+            if key == "boosting_type" and self.hyperparameter_space[key] == "goss":
+                if key in ["bagging_fraction", "bagging_freq"]:
+                    continue
             if key == 'boosting_type':
                 grid.update({'boosting_type': Categorical(
+                    self.hyperparameter_space[key])})
+                continue
+            if key == 'extra_trees':
+                grid.update({'extra_trees': Categorical(
                     self.hyperparameter_space[key])})
                 continue
             val = params[key]
@@ -247,8 +254,8 @@ class Trainer(object):
             Returns:
                 str: type of the variable
         """
-        if key in ['num_leaves', 'max_depth', 'min_child_samples', 'max_bin', 'max_drop']:
+        if key in ['num_leaves', 'max_depth', 'min_child_samples', 'max_bin', 'max_drop', 'bagging_freq']:
             return 'Integer'
-        if key == 'boosting_type':
+        if key == 'boosting_type' or key == 'extra_trees':
             return 'Categorical'
         return 'Continuous'
