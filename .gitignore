@@ -1,0 +1,5 @@
+build
+EffectiveT3.egg-info
+**/.vscode
+**/__pycache__/
+**/.ipynb_checkpoints/

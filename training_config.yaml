@@ -1,0 +1,22 @@
+# Parameters used for training the Light Gradient Boosting Machine
+params:
+  # The number of generations that the genetic algorithm 
+  # optimization should perform
+  generations: 7
+  # The number of individuals that should be randomly 
+  # generated during each generation of the genetic algorithm
+  population_size: 40
+  # Into how many k folds should the training data be split
+  # for performing k-fold cross validation
+  k_fold: 4
+  # Number of estimators to train for light gradient boosting machine
+  n_estimators: 30
+  # Evaluation metric for training
+  # Possible values:
+  # see https://scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter
+  # for a more detailed description of the available evaluation metrics
+      # 'accuracy' # 'balanced_accuracy' # 'average_precision' # 'f1'
+      # 'f1_micro' # 'f1_macro' # 'f1_weighted' # 'f1_samples' # 'precision'
+      # 'recall' # 'roc_auc' # 'roc_auc_ovr' # 'roc_auc_ovo' # 'roc_auc_ovr_weighted'
+      # 'roc_auc_ovo_weighted'
+  evaluation_metric: 'roc_auc'
