@@ -1,3 +1,39 @@
+# Collection of training data
+
+### Positive training data
+
+- the sequences of all proteins that have been experimentally or
+  sufficiently computationally verified to be secreted by the Type III secretion system of bacteria
+
+### Negative training data
+
+- Downloaded all protein sequences from the ref-seq database for all bacterial species
+  that have at least one protein that was experimentally verified to be secreted by the Type III secretion system of bacteria
+
+- Randomly and as much as possible uniformly sampled protein sequences from the proteins in the ref-seq database of each of the species above
+
+- Obtained roughly 9k - 10k protein sequences fulfilling the criteria below that fulfill which where preprocessed and clustered by the cdhit commands below
+
+  - the protein sequence has an N-terminal domain in the range of the first 1-50 amino acids
+  - the protein sequence DOES NOT contain a Eukaryotic-like domain
+
+    - -> Assumption 1: proteins containing an N-terminal domain are very likely not secreted
+    - -> Assumption 2: Eukaryotic-like domains can be an indication that the protein sequence is secreted by the Type III secretion system
+
+### INTERPROSCAN Version 5.53-87.0
+
+Interproscan in combination with pfam was used to obtain information about the protein domains.
+-> this way we figured out which protein sequences contained N-terminal domains and which contained any Eukaryotic-like domains
+
+> ./interproscan.sh -i {path_to_the_fasta_file_with_one_or_more_sequences} -cpu {number_of_cores} -appl pfam -f tsv -dp -t p -T {path_to_temp_folder_where_temporary_data_is_saved} -d {path_to_directory_where_results_are_saved}
+
+(pfam: A large collection of protein families, each represented by multiple sequence alignments and hidden Markov models (HMMs).)
+
+For a proper description of interproscan and pfam please visit their documentation: https://interproscan-docs.readthedocs.io/en/latest/HowToRun.html
+For a proper description of Eukaryotic-like domains and their Domain IDs (PF.....) visit: https://effectors.org/reports/eld_search
+
+---
+
 ## CdHit PsiCdHit clustering commands to obtain processed training data with 30% percentage sequence identity cutoff, low redundancy and low evolutionary similarity
 
 the raw (unprocessed) protein sequences can be found in the "unprocessed_sequences" directory
