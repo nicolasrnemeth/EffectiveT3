@@ -1,0 +1,274 @@
+{
+    "0": {
+        "label": "[False]",
+        "probability": 0.095
+    },
+    "1": {
+        "label": "[False]",
+        "probability": 0.252
+    },
+    "2": {
+        "label": "[False]",
+        "probability": 0.445
+    },
+    "3": {
+        "label": "[ True]",
+        "probability": 0.699
+    },
+    "4": {
+        "label": "[ True]",
+        "probability": 0.653
+    },
+    "5": {
+        "label": "[ True]",
+        "probability": 0.598
+    },
+    "6": {
+        "label": "[ True]",
+        "probability": 0.706
+    },
+    "7": {
+        "label": "[ True]",
+        "probability": 0.766
+    },
+    "8": {
+        "label": "[ True]",
+        "probability": 0.766
+    },
+    "9": {
+        "label": "[ True]",
+        "probability": 0.766
+    },
+    "10": {
+        "label": "[False]",
+        "probability": 0.495
+    },
+    "11": {
+        "label": "[ True]",
+        "probability": 0.554
+    },
+    "12": {
+        "label": "[ True]",
+        "probability": 0.636
+    },
+    "13": {
+        "label": "[ True]",
+        "probability": 0.636
+    },
+    "14": {
+        "label": "[ True]",
+        "probability": 0.52
+    },
+    "15": {
+        "label": "[ True]",
+        "probability": 0.578
+    },
+    "16": {
+        "label": "[ True]",
+        "probability": 0.628
+    },
+    "17": {
+        "label": "[ True]",
+        "probability": 0.628
+    },
+    "18": {
+        "label": "[ True]",
+        "probability": 0.571
+    },
+    "19": {
+        "label": "[ True]",
+        "probability": 0.571
+    },
+    "20": {
+        "label": "[ True]",
+        "probability": 0.558
+    },
+    "21": {
+        "label": "[ True]",
+        "probability": 0.622
+    },
+    "22": {
+        "label": "[ True]",
+        "probability": 0.564
+    },
+    "23": {
+        "label": "[ True]",
+        "probability": 0.622
+    },
+    "24": {
+        "label": "[ True]",
+        "probability": 0.546
+    },
+    "25": {
+        "label": "[ True]",
+        "probability": 0.621
+    },
+    "26": {
+        "label": "[ True]",
+        "probability": 0.621
+    },
+    "27": {
+        "label": "[False]",
+        "probability": 0.483
+    },
+    "28": {
+        "label": "[False]",
+        "probability": 0.483
+    },
+    "29": {
+        "label": "[False]",
+        "probability": 0.194
+    },
+    "30": {
+        "label": "[False]",
+        "probability": 0.158
+    },
+    "31": {
+        "label": "[False]",
+        "probability": 0.129
+    },
+    "32": {
+        "label": "[False]",
+        "probability": 0.129
+    },
+    "33": {
+        "label": "[False]",
+        "probability": 0.129
+    },
+    "34": {
+        "label": "[False]",
+        "probability": 0.085
+    },
+    "35": {
+        "label": "[False]",
+        "probability": 0.079
+    },
+    "36": {
+        "label": "[False]",
+        "probability": 0.063
+    },
+    "37": {
+        "label": "[False]",
+        "probability": 0.037
+    },
+    "38": {
+        "label": "[False]",
+        "probability": 0.031
+    },
+    "39": {
+        "label": "[False]",
+        "probability": 0.031
+    },
+    "40": {
+        "label": "[False]",
+        "probability": 0.038
+    },
+    "41": {
+        "label": "[False]",
+        "probability": 0.054
+    },
+    "42": {
+        "label": "[False]",
+        "probability": 0.054
+    },
+    "43": {
+        "label": "[False]",
+        "probability": 0.048
+    },
+    "44": {
+        "label": "[False]",
+        "probability": 0.049
+    },
+    "45": {
+        "label": "[False]",
+        "probability": 0.067
+    },
+    "46": {
+        "label": "[False]",
+        "probability": 0.067
+    },
+    "47": {
+        "label": "[False]",
+        "probability": 0.067
+    },
+    "48": {
+        "label": "[False]",
+        "probability": 0.067
+    },
+    "49": {
+        "label": "[False]",
+        "probability": 0.067
+    },
+    "50": {
+        "label": "[False]",
+        "probability": 0.067
+    },
+    "51": {
+        "label": "[False]",
+        "probability": 0.06
+    },
+    "52": {
+        "label": "[False]",
+        "probability": 0.133
+    },
+    "53": {
+        "label": "[False]",
+        "probability": 0.06
+    },
+    "54": {
+        "label": "[False]",
+        "probability": 0.199
+    },
+    "55": {
+        "label": "[False]",
+        "probability": 0.044
+    },
+    "56": {
+        "label": "[False]",
+        "probability": 0.092
+    },
+    "57": {
+        "label": "[False]",
+        "probability": 0.263
+    },
+    "58": {
+        "label": "[False]",
+        "probability": 0.072
+    },
+    "59": {
+        "label": "[False]",
+        "probability": 0.072
+    },
+    "60": {
+        "label": "[False]",
+        "probability": 0.072
+    },
+    "61": {
+        "label": "[False]",
+        "probability": 0.116
+    },
+    "62": {
+        "label": "[False]",
+        "probability": 0.119
+    },
+    "63": {
+        "label": "[False]",
+        "probability": 0.023
+    },
+    "64": {
+        "label": "[False]",
+        "probability": 0.018
+    },
+    "65": {
+        "label": "[False]",
+        "probability": 0.018
+    },
+    "66": {
+        "label": "[False]",
+        "probability": 0.025
+    },
+    "67": {
+        "label": "[False]",
+        "probability": 0.025
+    }
+}

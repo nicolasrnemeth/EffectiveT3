@@ -25,6 +25,8 @@ class Trainer(object):
     """
     # The sequence region to use for prediction
     seq_range: Tuple[int, int] = None
+    # Neg. : pos. class ratio
+    scale_pos_weight: float = None
     # A list of protein sequences and their identifiers
     protein_sequences: np.ndarray = None
     # The true labels
@@ -65,8 +67,13 @@ class Trainer(object):
             self.hyperparameter_space = json.load(ifile)
         # Compute protein encodings
         self.features = encode(self.protein_sequences, seq_range)[1]
+        # Weight the positive class based on the actual neg. : pos. class ratio
+        y = self.labels
+        # neg count divided by pos count
+        self.scale_pos_weight = (len(y)-sum(y)) / sum(y)
         # Uncomment below to display feature dimensions during training
-        print("Feature dimensions:", self.features.shape, "\n")
+        print("Number of samples | feature dimensions:",
+              self.features.shape, "\n")
 
     def train(self) -> Tuple[lgbm.LGBMClassifier, dict]:
         """
@@ -75,17 +82,15 @@ class Trainer(object):
             Returns:
                 Tuple[lgbm.LGBMClassifier, dict]: the optimized classifier and the optimized hyperparameters
         """
-        print("One-by-one parameter optimization ...", end=" ")
+        print("\nOne-by-one parameter optimization ...")
         optimized_parameters = self.__one_by_one_parameter_optimization(
             **self.__collect_params_from_config_file(step_two=False)
         )
-        print("Done!")
-        print("Heuristic optimization of one-by-one optimized parameters ...", end=" ")
+        print("\nHeuristic optimization of one-by-one optimized parameters ...")
         final_classifier, optimized_hyperparameters = self.__heuristic_optimization(
             initial_params=optimized_parameters,
             **self.__collect_params_from_config_file(step_two=True)
         )
-        print("Done!")
         return final_classifier, optimized_hyperparameters
 
     def __collect_params_from_config_file(self, step_two: bool) -> dict:
@@ -117,7 +122,7 @@ class Trainer(object):
         if self.TRAINING_CONFIG["params"].get('evaluation_metric') is not None:
             parameters['evaluation_metric'] = self.TRAINING_CONFIG["params"]["evaluation_metric"]
         else:
-            parameters['evaluation_metric'] = 'roc_auc'
+            parameters['evaluation_metric'] = 'balanced_accuracy'
             missingParams.append('evaluation_metric')
 
         if step_two:
@@ -161,7 +166,8 @@ class Trainer(object):
         param_grid = self.__parameter_grid(initial_params)
         model = lgbm.LGBMClassifier(n_jobs=-1,
                                     n_estimators=n_estimators,
-                                    verbose=-1).set_params(**initial_param)
+                                    verbose=-1,
+                                    scale_pos_weight=self.scale_pos_weight).set_params(**initial_params)
 
         clf_GA = GASearchCV(model, cv=k_fold, param_grid=param_grid, scoring=evaluation_metric,
                             n_jobs=-1, population_size=population_size,
@@ -191,12 +197,13 @@ class Trainer(object):
         best_params = dict()
         for key in self.hyperparameter_space:
             if "boosting_type" in best_params and best_params["boosting_type"] == "goss":
-                if key in ["bagging_fraction", "subsample_freq"]:
+                if key in ["subsample", "subsample_freq"]:
                     continue
             print("Optimization with respect to " + key.upper() + ':', end=" ")
             model = lgbm.LGBMClassifier(n_jobs=-1,
                                         n_estimators=n_estimators,
-                                        verbose=-1).set_params(**best_params)
+                                        verbose=-1,
+                                        scale_pos_weight=self.scale_pos_weight).set_params(**best_params)
             clf = GridSearchCV(model, {key: self.hyperparameter_space[key]}, n_jobs=-1,
                                cv=k_fold, scoring=evaluation_metric)
             clf.fit(self.features, self.labels)
@@ -219,7 +226,7 @@ class Trainer(object):
         grid = dict()
         for key in params:
             if key == "boosting_type" and self.hyperparameter_space[key] == "goss":
-                if key in ["bagging_fraction", "subsample_freq"]:
+                if key in ["subsample", "subsample_freq"]:
                     continue
             if key == 'boosting_type':
                 grid.update({'boosting_type': Categorical(
@@ -259,7 +266,7 @@ class Trainer(object):
             Returns:
                 str: type of the variable
         """
-        if key in ['num_leaves', 'max_depth', 'min_child_samples', 'max_bin', 'max_drop', 'bagging_freq']:
+        if key in ['num_leaves', 'max_depth', 'min_child_samples', 'max_bin', 'max_drop', 'subsample_freq']:
             return 'Integer'
         if key == 'boosting_type' or key == 'extra_trees':
             return 'Categorical'

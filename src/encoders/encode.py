@@ -26,10 +26,10 @@ def encode(fastas: np.ndarray, seq_range: Tuple[int, int] = None) -> Tuple[np.nd
     aac = AAC(fastas, seq_range=seq_range)
     dpc = DPC(fastas, seq_range=seq_range)
     # Amino acid property (patterns) based features
+    aaprop = AaPropPatterns(fastas, seq_range=seq_range)
     ctdc = CTDC(fastas, seq_range=seq_range)
     ctdt = CTDT(fastas, seq_range=seq_range)
-    aaprop = AaPropPatterns(fastas, seq_range=seq_range)
     # Combine all features
-    features = np.hstack((aac, dpc, ctdc, ctdt, aaprop))
+    features = np.hstack((aac, aaprop, ctdc, ctdt, dpc))
     # names, encodings
     return fastas[:, 0], features
