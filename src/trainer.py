@@ -161,7 +161,7 @@ class Trainer(object):
         param_grid = self.__parameter_grid(initial_params)
         model = lgbm.LGBMClassifier(n_jobs=-1,
                                     n_estimators=n_estimators,
-                                    verbose=-1).set_params(**initial_params)
+                                    verbose=-1).set_params(**initial_param)
 
         clf_GA = GASearchCV(model, cv=k_fold, param_grid=param_grid, scoring=evaluation_metric,
                             n_jobs=-1, population_size=population_size,
@@ -190,6 +190,9 @@ class Trainer(object):
         """
         best_params = dict()
         for key in self.hyperparameter_space:
+            if "boosting_type" in best_params and best_params["boosting_type"] == "goss":
+                if key in ["bagging_fraction", "subsample_freq"]:
+                    continue
             print("Optimization with respect to " + key.upper() + ':', end=" ")
             model = lgbm.LGBMClassifier(n_jobs=-1,
                                         n_estimators=n_estimators,
@@ -219,11 +222,11 @@ class Trainer(object):
                 if key in ["bagging_fraction", "subsample_freq"]:
                     continue
             if key == 'boosting_type':
-                params.update({'boosting_type': Categorical(
+                grid.update({'boosting_type': Categorical(
                     self.hyperparameter_space[key])})
                 continue
             if key == 'extra_trees':
-                params.update({'extra_trees': Categorical(
+                grid.update({'extra_trees': Categorical(
                     self.hyperparameter_space[key])})
                 continue
             val = params[key]
