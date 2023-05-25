@@ -24,7 +24,7 @@ class Trainer(object):
         Uses the training parameters configured in 'training_config.yaml'
     """
     # The sequence region to use for prediction
-    sequence_range: Tuple[int, int] = None
+    seq_range: Tuple[int, int] = None
     # A list of protein sequences and their identifiers
     protein_sequences: np.ndarray = None
     # The true labels
@@ -58,11 +58,13 @@ class Trainer(object):
             np.ones(len(positive_sequences)),
             np.zeros(len(negative_sequences))
         ))
+        # Sequence region to use for prediction
+        self.seq_range = seq_range
         # The hyperparameter space to optimize over
         with open('src/training/hyperparameter_space.json', 'r') as ifile:
             self.hyperparameter_space = json.load(ifile)
         # Compute protein encodings
-        self.features = encode(self.protein_sequences, sequence_range)[1]
+        self.features = encode(self.protein_sequences, seq_range)[1]
         # Uncomment below to display feature dimensions during training
         print("Feature dimensions:", self.features.shape, "\n")
 
