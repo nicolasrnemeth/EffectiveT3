@@ -82,8 +82,8 @@ class Trainer(object):
         print("Done!")
         print("Heuristic optimization of one-by-one optimized parameters ...", end=" ")
         final_classifier, optimized_hyperparameters = self.__heuristic_optimization(
-            initial_params=optimized_parameters
-            ** self.__collect_params_from_config_file(step_two=True)
+            initial_params=optimized_parameters,
+            **self.__collect_params_from_config_file(step_two=True)
         )
         print("Done!")
         return final_classifier, optimized_hyperparameters
@@ -102,34 +102,34 @@ class Trainer(object):
         parameters = dict()
         missingParams = list()
 
-        if self.TRAINING_CONFIG.params.get('n_estimators') is not None:
-            parameters['n_estimators'] = self.TRAINING_CONFIG.params.n_estimators
+        if self.TRAINING_CONFIG["params"].get('n_estimators') is not None:
+            parameters['n_estimators'] = self.TRAINING_CONFIG["params"]["n_estimators"]
         else:
             parameters['n_estimators'] = 30
             missingParams.append('n_estimators')
 
-        if self.TRAINING_CONFIG.params.get('k_fold') is not None:
-            parameters['k_fold'] = self.TRAINING_CONFIG.params.k_fold
+        if self.TRAINING_CONFIG["params"].get('k_fold') is not None:
+            parameters['k_fold'] = self.TRAINING_CONFIG["params"]["k_fold"]
         else:
             parameters['k_fold'] = 4
             missingParams.append('k_fold')
 
-        if self.TRAINING_CONFIG.params.get('evaluation_metric') is not None:
-            parameters['evaluation_metric'] = self.TRAINING_CONFIG.params.evaluation_metric
+        if self.TRAINING_CONFIG["params"].get('evaluation_metric') is not None:
+            parameters['evaluation_metric'] = self.TRAINING_CONFIG["params"]["evaluation_metric"]
         else:
             parameters['evaluation_metric'] = 'roc_auc'
             missingParams.append('evaluation_metric')
 
         if step_two:
             # Add parameters for heuristic optimization on top of common parameters
-            if self.TRAINING_CONFIG.params.population_size is not None:
-                parameters['population_size'] = self.TRAINING_CONFIG.params.population_size
+            if self.TRAINING_CONFIG["params"].get("population_size") is not None:
+                parameters['population_size'] = self.TRAINING_CONFIG["params"]["population_size"]
             else:
                 parameters['population_size'] = 30
                 missingParams.append('population_size')
 
-            if self.TRAINING_CONFIG.params.generations is not None:
-                parameters['generations'] = self.TRAINING_CONFIG.params.generations
+            if self.TRAINING_CONFIG["params"].get("generations") is not None:
+                parameters['generations'] = self.TRAINING_CONFIG["params"]["generations"]
             else:
                 parameters['generations'] = 7
                 missingParams.append('generations')
@@ -216,14 +216,14 @@ class Trainer(object):
         grid = dict()
         for key in params:
             if key == "boosting_type" and self.hyperparameter_space[key] == "goss":
-                if key in ["bagging_fraction", "bagging_freq"]:
+                if key in ["bagging_fraction", "subsample_freq"]:
                     continue
             if key == 'boosting_type':
-                grid.update({'boosting_type': Categorical(
+                params.update({'boosting_type': Categorical(
                     self.hyperparameter_space[key])})
                 continue
             if key == 'extra_trees':
-                grid.update({'extra_trees': Categorical(
+                params.update({'extra_trees': Categorical(
                     self.hyperparameter_space[key])})
                 continue
             val = params[key]
