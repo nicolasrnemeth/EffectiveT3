@@ -24,7 +24,6 @@ to the folder 'src/training/models_and_parameters/'."""
 # if you train and new model and change the sequence region
 # make sure to adjust this variable at the top of the file __predict__.py
 # such that it has the same value
-global SEQ_RANGE
 SEQ_RANGE = (1, 26)
 
 

@@ -43,7 +43,7 @@ class Trainer(object):
         print("ERROR MESSAGE: ", str(e))
 
     def __init__(self, pos_fasta_file: str, neg_fasta_file: str,
-                 sequence_range: Tuple[int, int] = None) -> None:
+                 seq_range: Tuple[int, int] = None) -> None:
         """
             Creates new instance.
         """
