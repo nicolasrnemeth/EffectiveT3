@@ -6,6 +6,14 @@ from .ctdt import CTDT
 from .dpc import DPC
 from .aaprop_patterns import AaPropPatterns
 
+# # DPC as obtained by feature selection using feature importances of trained light gradient boosting model
+# DPC_FEATURE_SELECTION = [
+#     "LW", "SP", "YF", "VI", "SS", "FA", "NN", "SH", "WL", "NT",
+#     "RD", "SN", "WV", "SQ", "EV", "KR", "ST", "TP", "GY", "PS", "PT"
+# ]
+# # AaProp feature selection using feature importances of trained light gradient boosting model
+# POLAR = "NQST"
+
 
 def encode(fastas: np.ndarray, seq_range: Tuple[int, int] = None) -> Tuple[np.ndarray, np.ndarray]:
     """

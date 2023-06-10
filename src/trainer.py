@@ -9,7 +9,8 @@ import numpy as np
 import lightgbm as lgbm  # classifier
 from sklearn_genetic import GASearchCV  # heuristic optimization
 from sklearn_genetic.space import Categorical, Integer, Continuous
-from sklearn.model_selection import GridSearchCV  # deterministic optimization
+# deterministic optimization
+from sklearn.model_selection import GridSearchCV, StratifiedKFold
 
 # Own package imports
 from .sequtils import read_fasta
@@ -169,10 +170,11 @@ class Trainer(object):
                                     verbose=-1,
                                     scale_pos_weight=self.scale_pos_weight).set_params(**initial_params)
 
-        clf_GA = GASearchCV(model, cv=k_fold, param_grid=param_grid, scoring=evaluation_metric,
+        sk_fold = StratifiedKFold(n_splits=k_fold, shuffle=True)
+        clf_GA = GASearchCV(model, cv=sk_fold, param_grid=param_grid, scoring=evaluation_metric,
                             n_jobs=-1, population_size=population_size,
                             generations=generations,
-                            verbose=2)
+                            verbose=2, error_score='raise')
         clf_GA.fit(self.features, self.labels)
 
         # Optimize again but over all protein sequences, because the best estimator
@@ -204,8 +206,9 @@ class Trainer(object):
                                         n_estimators=n_estimators,
                                         verbose=-1,
                                         scale_pos_weight=self.scale_pos_weight).set_params(**best_params)
+            sk_fold = StratifiedKFold(n_splits=k_fold, shuffle=True)
             clf = GridSearchCV(model, {key: self.hyperparameter_space[key]}, n_jobs=-1,
-                               cv=k_fold, scoring=evaluation_metric)
+                               cv=sk_fold, scoring=evaluation_metric, error_score='raise')
             clf.fit(self.features, self.labels)
             best_params.update(clf.best_params_)
             print("Done!")
