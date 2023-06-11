@@ -101,7 +101,8 @@ def start(pargs: dict) -> None:
     print("Training Model ...\n")
     model, parameters = trainer.train()
     save_model(os.path.join(SAVED_MODELS_FOLDER, "model.bin"),
-               os.path.join(SAVED_MODELS_FOLDER, "optimized_parameters.json"),
+               os.path.join(SAVED_MODELS_FOLDER,
+                            "optimized_hyperparameters.json"),
                os.path.join(SAVED_MODELS_FOLDER, "feature_importances.json"),
                model, parameters, model.feature_importances_,
                # Whether to save feature importances

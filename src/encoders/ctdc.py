@@ -43,38 +43,48 @@ def CTDC(fastas: np.ndarray, seq_range: Tuple[int, int] = None) -> np.ndarray:
             seq_range (Tuple[int, int]): sequence region to compute the encoding for
 
         Returns:
-            n x 21 dimensional np.ndarray where n is the number of protein sequences
+            n x 1 dimensional np.ndarray where n is the number of protein sequences
+            the dimension is 1 because the feature selection is hard-coded to ensure
+            faster running time, the full code in comments is for reference, if
+            you want to compute the full CTDC encoding for some reason
+            -> the full encoding would return a n x 21 dimensional np.ndarray
     """
 
-    group1 = {
-        'hydrophobicity_PRAM900101': 'RKEDQN',
-        'normwaalsvolume': 'GASTPDC',
-        'polarity':        'LIFWCMVY',
-        'polarizability':  'GASDT',
-        'charge':          'KR',
-        'secondarystruct': 'EALMQKRH',
-        'solventaccess':   'ALFCGIVW'
-    }
-    group2 = {
-        'hydrophobicity_PRAM900101': 'GASTPHY',
-        'normwaalsvolume': 'NVEQIL',
-        'polarity':        'PATGS',
-        'polarizability':  'CPNVEQIL',
-        'charge':          'ANCQGHILMFPSTWYV',
-        'secondarystruct': 'VIYCWFT',
-        'solventaccess':   'RKQEND'
-    }
+    # Remove the comment if you want to compute the full CTDC encoding ,now only
+    # the features from CTDC encoding as obtained by feature selection are computed
+
+    # group1 = {
+    #     'hydrophobicity_PRAM900101': 'RKEDQN',
+    #     'normwaalsvolume': 'GASTPDC',
+    #     'polarity':        'LIFWCMVY',
+    #     'polarizability':  'GASDT',
+    #     'charge':          'KR',
+    #     'secondarystruct': 'EALMQKRH',
+    #     'solventaccess':   'ALFCGIVW'
+    # }
+    # group2 = {
+    #     'hydrophobicity_PRAM900101': 'GASTPHY',
+    #     'normwaalsvolume': 'NVEQIL',
+    #     'polarity':        'PATGS',
+    #     'polarizability':  'CPNVEQIL',
+    #     'charge':          'ANCQGHILMFPSTWYV',
+    #     'secondarystruct': 'VIYCWFT',
+    #     'solventaccess':   'RKQEND'
+    # }
     group3 = {
-        'hydrophobicity_PRAM900101': 'CLVIMFW',
-        'normwaalsvolume': 'MHKFRYW',
-        'polarity':        'HQRKNED',
-        'polarizability':  'KMHFRYW',
-        'charge':          'DE',
+        # 'hydrophobicity_PRAM900101': 'CLVIMFW',
+        # 'normwaalsvolume': 'MHKFRYW',
+        # 'polarity':        'HQRKNED',
+        # 'polarizability':  'KMHFRYW',
+        # 'charge':          'DE',
         'secondarystruct': 'GNPSD',
-        'solventaccess':   'MSPTHY'
+        # 'solventaccess':   'MSPTHY'
     }
-    property = ('hydrophobicity_PRAM900101', 'normwaalsvolume', 'polarity',
-                'polarizability', 'charge', 'secondarystruct', 'solventaccess')
+    property = (  # 'hydrophobicity_PRAM900101', 'normwaalsvolume', 'polarity',
+        # 'polarizability', 'charge',
+        'secondarystruct',
+        # 'solventaccess'
+    )
 
     if seq_range is not None:
         for idx in range(len(fastas)):
@@ -86,11 +96,14 @@ def CTDC(fastas: np.ndarray, seq_range: Tuple[int, int] = None) -> np.ndarray:
         code = list()
         sequence = re.sub('-', '', sequence)
         for p in property:
-            c1 = Count(group1[p], sequence) / len(sequence)
-            c2 = Count(group2[p], sequence) / len(sequence)
+
+            # Remove comments below if you want to compute the full CTDC encoding
+
+            # c1 = Count(group1[p], sequence) / len(sequence)
+            # c2 = Count(group2[p], sequence) / len(sequence)
             c3 = Count(group3[p], sequence) / len(sequence)
-            code.append(c1)
-            code.append(c2)
+            # code.append(c1)
+            # code.append(c2)
             code.append(c3)
         features.append(code)
     return np.array(features)
