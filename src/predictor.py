@@ -167,7 +167,8 @@ def write_results(ofile_path: str, probabilities: np.ndarray, true_labels: List[
             None
     """
     # np.ndarray containing the boolean labels for each protein sequence
-    labels = (probabilities >= DECISION_THRESHOLD).astype(bool)
+    labels = (probabilities >= DECISION_THRESHOLD).astype(bool).flatten()
+    probabilities = probabilities.flatten()
 
     file_path, file_ext = os.path.splitext(ofile_path)
 
@@ -187,7 +188,7 @@ def write_results(ofile_path: str, probabilities: np.ndarray, true_labels: List[
         ofile_path = file_path + ".txt"
     with open(ofile_path, 'w') as ofile:
         if ".json" in re.split(r'[/\\]', ofile_path)[-1]:
-            results_dict = {str(key): dict(label=str(lab), probability=float(np.round(prob, 3)))
+            results_dict = {str(key): dict(label=bool(lab), probability=float(round(prob, 3)))
                             for key, lab, prob in zip(range(len(labels)), labels, probabilities)}
             json.dump(results_dict, ofile, indent=4)
         else:
@@ -201,8 +202,7 @@ def write_results(ofile_path: str, probabilities: np.ndarray, true_labels: List[
             results += "sequence number, prediction by " + \
                 "Effective T3" + f", probability\n{dashes}\n"
             for seqNo, lab, proba in zip(range(len(labels)), labels, probabilities):
-                results += '> ' + str(seqNo) + ', ' + str(lab) + \
-                    ', ' + str(np.round(proba, 3)) + '\n'
+                results += f"> {str(seqNo)} , {bool(lab)} , {str(round(proba, 3))} \n"
             ofile.write(results[:-1])
 
 
