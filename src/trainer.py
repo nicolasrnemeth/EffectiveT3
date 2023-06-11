@@ -144,7 +144,8 @@ class Trainer(object):
         if len(missingParams) != 0:
             print("The following parameters from the config filed could not be found or are missspelled: ",
                   ", ".join(missingParams))
-            print("There the default values are taken instead.")
+            print("Their default values (see function '__collect_params_from_config_file'",
+                  "inside 'src/training/trainer.py') are taken instead.")
 
         return parameters
 
@@ -228,12 +229,7 @@ class Trainer(object):
         """
         grid = dict()
         for key in params:
-            if key == "boosting_type" and self.hyperparameter_space[key] == "goss":
-                if key in ["subsample", "subsample_freq"]:
-                    continue
             if key == 'boosting_type':
-                grid.update({'boosting_type': Categorical(
-                    self.hyperparameter_space[key])})
                 continue
             if key == 'extra_trees':
                 grid.update({'extra_trees': Categorical(
@@ -271,6 +267,6 @@ class Trainer(object):
         """
         if key in ['num_leaves', 'max_depth', 'min_child_samples', 'max_bin', 'max_drop', 'subsample_freq']:
             return 'Integer'
-        if key == 'boosting_type' or key == 'extra_trees':
+        if key in ['boosting_type', 'extra_trees']:
             return 'Categorical'
         return 'Continuous'
