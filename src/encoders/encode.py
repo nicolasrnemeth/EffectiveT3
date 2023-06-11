@@ -12,18 +12,18 @@ from .aaprop_patterns import AaPropPatterns
 # otherwise the same model with that performs so well on multiple test sets
 # cannot be obtained again with the exact same optimized weight (parameters)
 DPC_FEATURE_SELECTION_1 = [
-    'SS' 'KR' 'PS' 'WV' 'LH' 'TP' 'FY' 'WG' 'WA' 'NS' 'SN' 'SP' 'PI' 'WL'
-    'PP' 'NT' 'AR' 'PT' 'NN' 'FA' 'EW' 'IW' 'VE' 'VV' 'VI' 'QS' 'VL' 'QP'
-    'IL' 'TS' 'QN' 'ER' 'LW' 'WR' 'II' 'SQ' 'ST' 'RD' 'SC' 'GF' 'TQ' 'LM'
-    'HS' 'WD' 'SG'
+    'SS', 'KR', 'PS', 'WV', 'LH', 'TP', 'FY', 'WG', 'WA', 'NS', 'SN', 'SP', 'PI', 'WL',
+    'PP', 'NT', 'AR', 'PT', 'NN', 'FA', 'EW', 'IW', 'VE', 'VV', 'VI', 'QS', 'VL', 'QP',
+    'IL', 'TS', 'QN', 'ER', 'LW', 'WR', 'II', 'SQ', 'ST', 'RD', 'SC', 'GF', 'TQ', 'LM',
+    'HS', 'WD', 'SG'
 ]
 DPC_FEATURE_SELECTION_2 = [
-    'HT' 'DW' 'TT' 'QM' 'AP' 'QH' 'TN' 'LV' 'FE' 'LA'
-    'AW' 'PW' 'SH' 'VD' 'RG' 'WQ' 'QT' 'DE' 'KW' 'DF' 'NH'
+    'HT', 'DW', 'TT', 'QM', 'AP', 'QH', 'TN', 'LV', 'FE', 'LA',
+    'AW', 'PW', 'SH', 'VD', 'RG', 'WQ', 'QT', 'DE', 'KW', 'DF', 'NH'
 ]
 DPC_FEATURE_SELECTION_3 = [
-    'EV' 'FG' 'VM' 'RS' 'LL' 'AL' 'DY' 'AI' 'IV' 'FI'
-    'IA' 'YS' 'PA' 'DI' 'IN' 'TL' 'NP'
+    'EV', 'FG', 'VM', 'RS', 'LL', 'AL', 'DY', 'AI', 'IV', 'FI',
+    'IA', 'YS', 'PA', 'DI', 'IN', 'TL', 'NP'
 ]
 # AaProp feature selection using feature importances of trained light gradient boosting model
 POLAR = "NQST"
@@ -60,14 +60,20 @@ def encode(fastas: np.ndarray, seq_range: Tuple[int, int] = None) -> Tuple[np.nd
 
     # Sequence-based features
     dpc1 = DPC(fastas, seq_range=None, diPeptides=DPC_FEATURE_SELECTION_1)
+    print(dpc1.shape)
     dpc2 = DPC(fastas, seq_range=None, diPeptides=DPC_FEATURE_SELECTION_2)
+    print(dpc2.shape)
     dpc3 = DPC(fastas, seq_range=None, diPeptides=DPC_FEATURE_SELECTION_3)
+    print(dpc3.shape)
     # Amino acid property (patterns) based features
     aaprop = AaPropPatterns(fastas, seq_range=None, patterns=[POLAR])
+    print(aaprop.shape)
     # Feature selection is hardcoded inside the function ´src/encoders/ctdc.py´
     ctdc = CTDC(fastas, seq_range=None)
+    print(ctdc.shape)
     # Combine all features
     features = np.hstack((dpc1, aaprop, dpc2, ctdc, dpc3))
+    print(features.shape)
     # names, encodings
     return fastas[:, 0], features
 
