@@ -60,20 +60,14 @@ def encode(fastas: np.ndarray, seq_range: Tuple[int, int] = None) -> Tuple[np.nd
 
     # Sequence-based features
     dpc1 = DPC(fastas, seq_range=None, diPeptides=DPC_FEATURE_SELECTION_1)
-    print(dpc1.shape)
     dpc2 = DPC(fastas, seq_range=None, diPeptides=DPC_FEATURE_SELECTION_2)
-    print(dpc2.shape)
     dpc3 = DPC(fastas, seq_range=None, diPeptides=DPC_FEATURE_SELECTION_3)
-    print(dpc3.shape)
     # Amino acid property (patterns) based features
     aaprop = AaPropPatterns(fastas, seq_range=None, patterns=[POLAR])
-    print(aaprop.shape)
     # Feature selection is hardcoded inside the function ´src/encoders/ctdc.py´
     ctdc = CTDC(fastas, seq_range=None)
-    print(ctdc.shape)
     # Combine all features
     features = np.hstack((dpc1, aaprop, dpc2, ctdc, dpc3))
-    print(features.shape)
     # names, encodings
     return fastas[:, 0], features
 

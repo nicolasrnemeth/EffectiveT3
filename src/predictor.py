@@ -196,13 +196,13 @@ def write_results(ofile_path: str, probabilities: np.ndarray, true_labels: List[
             results += str(sum(labels)) + " pos. / " + \
                 str(len(labels)-sum(labels))
             results += " neg.  --> " + \
-                str(round(sum(labels)/len(labels)*100, 4)) + \
+                str(np.round(sum(labels)/len(labels)*100, 4)) + \
                 f" % positives\n{dashes}\n\n"
             results += "sequence number, prediction by " + \
                 "Effective T3" + f", probability\n{dashes}\n"
             for seqNo, lab, proba in zip(range(len(labels)), labels, probabilities):
                 results += '> ' + str(seqNo) + ', ' + str(lab) + \
-                    ', ' + str(round(proba, 3)) + '\n'
+                    ', ' + str(np.round(proba, 3)) + '\n'
             ofile.write(results[:-1])
 
 
