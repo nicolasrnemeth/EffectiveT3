@@ -1,0 +1,114 @@
+{
+    "vibrio": {
+        "pos_class_precision": 0.5,
+        "neg_class_precision": 0.9863013698630136
+    },
+    "sinorhizobium": {
+        "pos_class_precision": 0.3333333333333333,
+        "neg_class_precision": 0.9972677595628415
+    },
+    "citrobacter": {
+        "pos_class_precision": 0.6842105263157895,
+        "neg_class_precision": 0.0
+    },
+    "hyaloperonospora": {
+        "pos_class_precision": 0.25,
+        "neg_class_precision": 0.0
+    },
+    "rhizoctonia": {
+        "pos_class_precision": 0.0,
+        "neg_class_precision": 0.9642857142857143
+    },
+    "shigella": {
+        "pos_class_precision": 0.7222222222222222,
+        "neg_class_precision": 0.975609756097561
+    },
+    "acidovorax": {
+        "pos_class_precision": 0.3333333333333333,
+        "neg_class_precision": 0.9494949494949495
+    },
+    "burkholderia": {
+        "pos_class_precision": 1.0,
+        "neg_class_precision": 0.9425287356321839
+    },
+    "xanthomonas": {
+        "pos_class_precision": 1.0,
+        "neg_class_precision": 0.9642857142857143
+    },
+    "pseudomonas": {
+        "pos_class_precision": 0.9482758620689655,
+        "neg_class_precision": 0.9903536977491961
+    },
+    "chromobacterium": {
+        "pos_class_precision": 0.0,
+        "neg_class_precision": 0.9953917050691244
+    },
+    "chlamydia": {
+        "pos_class_precision": 0.9607843137254902,
+        "neg_class_precision": 0.38461538461538464
+    },
+    "photorhabdus": {
+        "pos_class_precision": 0.0,
+        "neg_class_precision": 0.972972972972973
+    },
+    "edwardsiella": {
+        "pos_class_precision": 0.375,
+        "neg_class_precision": 0.9666666666666667
+    },
+    "pantoea": {
+        "pos_class_precision": 1.0,
+        "neg_class_precision": 0.96875
+    },
+    "escherichia": {
+        "pos_class_precision": 0.5882352941176471,
+        "neg_class_precision": 0.9230769230769231
+    },
+    "bradyrhizobium": {
+        "pos_class_precision": 1.0,
+        "neg_class_precision": 1.0
+    },
+    "arsenophonus": {
+        "pos_class_precision": 0.3333333333333333,
+        "neg_class_precision": 1.0
+    },
+    "yersinia": {
+        "pos_class_precision": 0.6470588235294118,
+        "neg_class_precision": 1.0
+    },
+    "erwinia": {
+        "pos_class_precision": 0.2,
+        "neg_class_precision": 0.9130434782608695
+    },
+    "borreliella": {
+        "pos_class_precision": 0.0,
+        "neg_class_precision": 0.972972972972973
+    },
+    "aeromonas": {
+        "pos_class_precision": 0.5,
+        "neg_class_precision": 1.0
+    },
+    "salmonella": {
+        "pos_class_precision": 1.0,
+        "neg_class_precision": 0.5441176470588235
+    },
+    "sodalis": {
+        "pos_class_precision": 0.0,
+        "neg_class_precision": 0.9375
+    },
+    "mycoplasmopsis": {
+        "pos_class_precision": 0.0,
+        "neg_class_precision": 0.991869918699187
+    },
+    "listeria": {
+        "pos_class_precision": 0.0,
+        "neg_class_precision": 0.9970501474926253
+    },
+    "ralstonia": {
+        "pos_class_precision": 0.6842105263157895,
+        "neg_class_precision": 0.9733333333333334
+    },
+    "bordetella": {
+        "pos_class_precision": 0.6666666666666666,
+        "neg_class_precision": 0.96875
+    }
+}
