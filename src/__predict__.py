@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+import traceback
 from .predictor import predictor
 from multiprocessing import cpu_count
 
@@ -93,17 +94,18 @@ def start(pargs):
 
 
 def main():
-    # try:
-    # Start program
-    args = parse_args()
-    start(args)
-    file_path = os.path.join(os.getcwd(), args.ofile)
-    print('Successful execution of the program!')
-    print('\n--> Please find the results here: ' + file_path)
-    sys.exit(0)
-    # except Exception as e:
-    #    print('Program ran into an error: ', str(e))
-    #    sys.exit(0)
+    try:
+        # Start program
+        args = parse_args()
+        start(args)
+        file_path = os.path.join(os.getcwd(), args.ofile)
+        print('Successful execution of the program!')
+        print('\n--> Please find the results here: ' + file_path)
+        sys.exit(0)
+    except Exception as e:
+        print("Exception occurred: ", e)
+        traceback.print_exc()
+        sys.exit(0)
 
 
 if __name__ == '__main__':
