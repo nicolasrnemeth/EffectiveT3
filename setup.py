@@ -40,11 +40,11 @@ setuptools.setup(
         ],
     },
     install_requires=[
-        "numpy==1.21.5",
-        "lightgbm==3.3.2",
-        "sklearn-genetic==0.5.1",
-        "scikit-learn==1.1.2",
-        "pyyaml==6.0"
+        "numpy>=1.21.5",
+        "lightgbm>=3.3.2",
+        "sklearn-genetic>=0.5.1",
+        "scikit-learn>=1.1.2",
+        "pyyaml>=6.0"
     ],
     include_package_data=True,
     python_requires=">=3.6",
