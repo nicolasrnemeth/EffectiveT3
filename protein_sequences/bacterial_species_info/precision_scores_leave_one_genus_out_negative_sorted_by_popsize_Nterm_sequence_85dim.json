@@ -1,0 +1,114 @@
+{
+    "bradyrhizobium": {
+        "population_size": 415,
+        "precision_score": 0.9857482185273159
+    },
+    "sinorhizobium": {
+        "population_size": 367,
+        "precision_score": 1.0
+    },
+    "listeria": {
+        "population_size": 338,
+        "precision_score": 1.0
+    },
+    "pseudomonas": {
+        "population_size": 311,
+        "precision_score": 0.9809523809523809
+    },
+    "xanthomonas": {
+        "population_size": 297,
+        "precision_score": 0.9641693811074918
+    },
+    "vibrio": {
+        "population_size": 293,
+        "precision_score": 0.9765886287625418
+    },
+    "aeromonas": {
+        "population_size": 282,
+        "precision_score": 1.0
+    },
+    "chromobacterium": {
+        "population_size": 216,
+        "precision_score": 0.9953917050691244
+    },
+    "mycoplasmopsis": {
+        "population_size": 122,
+        "precision_score": 0.991869918699187
+    },
+    "acidovorax": {
+        "population_size": 100,
+        "precision_score": 0.9615384615384616
+    },
+    "bordetella": {
+        "population_size": 94,
+        "precision_score": 1.0
+    },
+    "burkholderia": {
+        "population_size": 82,
+        "precision_score": 0.9534883720930233
+    },
+    "ralstonia": {
+        "population_size": 79,
+        "precision_score": 0.8974358974358975
+    },
+    "shigella": {
+        "population_size": 45,
+        "precision_score": 0.9782608695652174
+    },
+    "escherichia": {
+        "population_size": 43,
+        "precision_score": 0.8648648648648649
+    },
+    "borreliella": {
+        "population_size": 41,
+        "precision_score": 0.975
+    },
+    "salmonella": {
+        "population_size": 37,
+        "precision_score": 0.578125
+    },
+    "yersinia": {
+        "population_size": 36,
+        "precision_score": 0.9655172413793104
+    },
+    "photorhabdus": {
+        "population_size": 36,
+        "precision_score": 0.972972972972973
+    },
+    "edwardsiella": {
+        "population_size": 34,
+        "precision_score": 0.9705882352941176
+    },
+    "sodalis": {
+        "population_size": 32,
+        "precision_score": 0.9696969696969697
+    },
+    "arsenophonus": {
+        "population_size": 31,
+        "precision_score": 1.0
+    },
+    "pantoea": {
+        "population_size": 31,
+        "precision_score": 0.96875
+    },
+    "rhizoctonia": {
+        "population_size": 27,
+        "precision_score": 0.9642857142857143
+    },
+    "erwinia": {
+        "population_size": 25,
+        "precision_score": 0.8928571428571429
+    },
+    "chlamydia": {
+        "population_size": 7,
+        "precision_score": 0.6363636363636364
+    },
+    "citrobacter": {
+        "population_size": 6,
+        "precision_score": 0.0
+    },
+    "hyaloperonospora": {
+        "population_size": 3,
+        "precision_score": 1.0
+    }
+}

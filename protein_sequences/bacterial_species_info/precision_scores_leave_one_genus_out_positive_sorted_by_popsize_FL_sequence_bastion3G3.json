@@ -1,0 +1,114 @@
+{
+    "pseudomonas": {
+        "population_size": 58,
+        "precision_score": 0.9090909090909091
+    },
+    "chlamydia": {
+        "population_size": 57,
+        "precision_score": 1.0
+    },
+    "salmonella": {
+        "population_size": 34,
+        "precision_score": 0.8571428571428571
+    },
+    "xanthomonas": {
+        "population_size": 17,
+        "precision_score": 0.875
+    },
+    "ralstonia": {
+        "population_size": 15,
+        "precision_score": 0.9
+    },
+    "shigella": {
+        "population_size": 14,
+        "precision_score": 0.6666666666666666
+    },
+    "escherichia": {
+        "population_size": 13,
+        "precision_score": 0.6428571428571429
+    },
+    "citrobacter": {
+        "population_size": 13,
+        "precision_score": 1.0
+    },
+    "bradyrhizobium": {
+        "population_size": 12,
+        "precision_score": 1.0
+    },
+    "yersinia": {
+        "population_size": 11,
+        "precision_score": 0.8333333333333334
+    },
+    "vibrio": {
+        "population_size": 9,
+        "precision_score": 0.6
+    },
+    "acidovorax": {
+        "population_size": 8,
+        "precision_score": 1.0
+    },
+    "burkholderia": {
+        "population_size": 6,
+        "precision_score": 0.6666666666666666
+    },
+    "bordetella": {
+        "population_size": 5,
+        "precision_score": 1.0
+    },
+    "aeromonas": {
+        "population_size": 4,
+        "precision_score": 0.5714285714285714
+    },
+    "edwardsiella": {
+        "population_size": 4,
+        "precision_score": 0.6
+    },
+    "arsenophonus": {
+        "population_size": 3,
+        "precision_score": 0.75
+    },
+    "erwinia": {
+        "population_size": 3,
+        "precision_score": 1.0
+    },
+    "pantoea": {
+        "population_size": 2,
+        "precision_score": 0.6666666666666666
+    },
+    "sodalis": {
+        "population_size": 2,
+        "precision_score": 1.0
+    },
+    "sinorhizobium": {
+        "population_size": 2,
+        "precision_score": 0.25
+    },
+    "rhizoctonia": {
+        "population_size": 1,
+        "precision_score": 0.0
+    },
+    "photorhabdus": {
+        "population_size": 1,
+        "precision_score": 1.0
+    },
+    "listeria": {
+        "population_size": 1,
+        "precision_score": 0.0
+    },
+    "borreliella": {
+        "population_size": 1,
+        "precision_score": 0.0
+    },
+    "chromobacterium": {
+        "population_size": 1,
+        "precision_score": 0.0
+    },
+    "hyaloperonospora": {
+        "population_size": 1,
+        "precision_score": 0.0
+    },
+    "mycoplasmopsis": {
+        "population_size": 1,
+        "precision_score": 0.0
+    }
+}
