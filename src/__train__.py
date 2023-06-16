@@ -3,6 +3,7 @@ import sys
 import json
 import time
 import pickle
+import traceback
 from typing import Any
 
 import numpy as np
@@ -127,7 +128,8 @@ def main():
               destination_path, "if you want to use the newly trained models for prediction.")
         sys.exit(0)
     except Exception as e:
-        print('Program ran into an error: ', str(e))
+        print("Exception occurred: ", e)
+        traceback.print_exc()
         sys.exit(0)
 
 
