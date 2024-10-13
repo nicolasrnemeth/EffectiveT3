@@ -3,6 +3,13 @@
 Binary classification for predicting whether proteins are secreted by the bacterial Type III secretion system based on
 a light gradient boosting machine model that was trained on sequence- and amino acid property based feature groups.
 
+## INTRODUCTION
+
+Type 3 secretion systems (T3SS) are critical components of many Gram-negative bacterial pathogens, playing a vital role in the pathogenesis of various infections. Accurate prediction of T3SS secreted proteins, also known as effectors, is crucial for understanding the molecular mechanisms underlying bacterial pathogenicity and developing novel therapeutic strategies. We present a new version of Effective T3, a machine learning approach for predicting T3SS effectors, surpassing the current state-of-the-art (SOTA) software Bastion3 in terms of gener-alization and computation time while achieving similar prediction performance.
+Unlike Bastion3, which heavily relies on position-specific scoring matrices (PSSMs) for pre-dictions, Effective T3 employs a more flexible framework that solely incorporates N-terminal protein-sequence-based information which we should better predict evolutionary distinct T3SS effectors - more precisely those that deviate from experimentally verified ones. Furthermore, EffectiveT3 offers faster performance and utilizes evaluation metrics more suitably for imbalanced datasets, contrasting with Bastion3's heavy reliance on the ROC-AUC metric, which can be overly optimistic when we are dealing with imbalanced datasets.
+To ensure robust and reliable predictions, Effective T3 was trained on a dataset, which was compiled using more rigorous criteria than the Bastion3 training dataset. Key differences include a stricter reduction of redundancy in protein sequences and the incorporation of a negative dataset solely consisting of protein sequences from bacterial species with experi-mentally verified T3SS effectors.
+By developing a more rigorous training da¬¬taset and employing a novel approach that es-chews PSSMs, Effective T3 sets a new standard for T3SS effector prediction.
+
 ## Install dependencies using the following command
 
 ### Note: they will be automatically installed via pip using the install command below
