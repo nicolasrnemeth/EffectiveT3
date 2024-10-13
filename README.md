@@ -10,6 +10,10 @@ Unlike Bastion3, which heavily relies on position-specific scoring matrices (PSS
 To ensure robust and reliable predictions, Effective T3 was trained on a dataset, which was compiled using more rigorous criteria than the Bastion3 training dataset. Key differences include a stricter reduction of redundancy in protein sequences and the incorporation of a negative dataset solely consisting of protein sequences from bacterial species with experi-mentally verified T3SS effectors.
 By developing a more rigorous training da¬¬taset and employing a novel approach that es-chews PSSMs, Effective T3 sets a new standard for T3SS effector prediction.
 
+## MATERIAL & METHODS
+
+Take a look at the PDF 'Material_and_Methods.pdf' for a detailed description of how Effective T3 version 3 was built.
+
 ## Install dependencies using the following command
 
 ### Note: they will be automatically installed via pip using the install command below
